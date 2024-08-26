@@ -8,7 +8,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
@@ -16,4 +21,6 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
         with:
-          node-version: 16
+          start: npm start 
+          wait-on: 'http://localhost:3000' 
+          wait-on-timeout: 
