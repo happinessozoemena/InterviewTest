@@ -4,6 +4,7 @@ describe('Login Functionality', () => {
       cy.visit('https://demo.guru99.com/V1/index.php');
     });
   
+    
     it('Successful login with valid credentials', () => {
         // Enter valid username
         cy.get('input[name="uid"]').type('mngr587552');
